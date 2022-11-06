@@ -29,9 +29,10 @@ function PokemonCard(props: Pokemon) {
 
   return <div className="card" key={pokemonId}>
     <Link to={`/pokemons/${pokemonId}`}>
+      <div>
       <img src={imageUrl}/>
       <h2 className="h2-title-case"><b>{props.name} </b></h2>
-      with id: {pokemonId}
+      </div>
     </Link>
   </div>
 
