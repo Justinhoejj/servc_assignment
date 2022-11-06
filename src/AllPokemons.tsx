@@ -15,7 +15,7 @@ function AllPokemons() {
   useEffect(() => {
     getList((currentPage - 1) * limit, limit)
       .then(resp => {
-        console.log(resp)
+        // console.log(resp)
         const data = resp.data
         setMaxSize(data.count)
         setPokemons(data.results)
@@ -31,6 +31,7 @@ function AllPokemons() {
   }, [limit, maxSize])
 
   useEffect(() => {
+    // Define available pages
     if (currentPage < 4) {
       setPageOptions(prev => [1, 2, 3, 4, 5])
     } else if (currentPage >= (maxPage - 5)) {
@@ -41,21 +42,25 @@ function AllPokemons() {
   }, [currentPage])
 
   return <div>
-    <h2>Page 
+    <h2>Page
       <input
         onChange={e => {
           const val = Number(e.target.value)
           setPageInputValue(e.target.value)
-          if (val > 0 && val <= maxPage ) { 
+          if (val > 0 && val <= maxPage) {
             setCurrentPage(Number(e.target.value))
-          }}}
+          }
+        }}
         value={pageInputValue}
-      /> 
+      />
       /{maxPage}
     </h2>
     <div className='select-size'>
       <h3>Size: </h3>
-      <select defaultValue={8} title='size:' onChange={e => setLimit(Number(e.target.value))}>
+      <select
+        defaultValue={8}
+        title='size:'
+        onChange={e => setLimit(Number(e.target.value))}>
         {limitOptions.map(n => <option value={n} key={n}>{n}</option>)}
       </select>
     </div>
@@ -66,24 +71,27 @@ function AllPokemons() {
         )}
       </div>
     </div>
-    <button 
-    disabled={currentPage <= 1 }
-    onClick={() => setCurrentPage(prev => prev - 1)}>Previous</button>
+    <button
+      disabled={currentPage <= 1}
+      onClick={() => setCurrentPage(prev => prev - 1)}>Previous</button>
     {pageOptions.map(p => {
       if (Number(p) == Number(currentPage)) {
-        return <button className='button-selected-page' onClick={() => setCurrentPage(prev => Number(p))}>
+        return <button
+          className='button-selected-page'
+          onClick={() => setCurrentPage(prev => Number(p))}>
           {String(p)}
         </button>
       } else {
-        return <button onClick={() => setCurrentPage(prev => Number(p))}>
+        return <button
+          onClick={() => setCurrentPage(prev => Number(p))}>
           {String(p)}
           <br />
         </button>
       }
     })}
-    <button 
-    disabled={currentPage >= maxPage}
-    onClick={() => setCurrentPage(prev => prev + 1)}>{"Next"}</button>
+    <button
+      disabled={currentPage >= maxPage}
+      onClick={() => setCurrentPage(prev => prev + 1)}>{"Next"}</button>
   </div>
 }
 

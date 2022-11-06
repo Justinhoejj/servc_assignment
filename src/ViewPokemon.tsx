@@ -44,11 +44,13 @@ function ViewPokemon() {
           {t.type.name}
         </li>
       })}
-      </ul>
+    </ul>
     <h2>Stats</h2>
     <ul>
       {stats.map(s => {
-        return <li className='pokemon-view-stats' key={s.stat.name}>
+        return <li
+          className='pokemon-view-stats'
+          key={s.stat.name}>
           {s.stat.name} {s.base_stat}
         </li>
       })}

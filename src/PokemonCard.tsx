@@ -8,6 +8,7 @@ interface Pokemon {
 }
 function PokemonCard(props: Pokemon) {
   const [imageUrl, setImageUrl] = useState('')
+  // Parse pokemon ID from url
   var pokemonId = '0'
   const regexRes = props.url.match(/\d+/g)
   if (regexRes != null) {
