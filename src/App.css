@@ -33,9 +33,80 @@
 }
 
 .card {
-  padding: 2em;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  
+}
+.card:focus,
+.card:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+
+}
+
+.container {
+  padding: 2px 16px;
 }
 
 .read-the-docs {
   color: #888;
+}
+
+.pokemon-card-container {
+  width: 20rem;
+  display: grid;
+}
+
+.pokemons-table {
+  height: 30rem;
+  overflow-y: scroll;
+  border-color: aliceblue;
+  border: 1px
+}
+
+.h2-title-case {
+  text-transform: capitalize;
+}
+
+.h1-title-case {
+  text-transform: capitalize;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+
+}
+
+.grid-container {
+  display: inline-grid;
+}
+
+.button-selected-page {
+  font-size: larger;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.select-size {
+  display: flex;
+}
+
+.pokemon-card-back {
+  display: flex;
+  align-self:flex-start;
+}
+
+.pokemon-view-stats {
+  justify-content: left;
 }
