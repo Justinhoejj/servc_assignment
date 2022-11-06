@@ -7,7 +7,7 @@ function App() {
 
   return (
     <div className="App">
-      <Link to='/pokemons'>
+      <Link to='/servc_assignment/pokemons'>
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src="/vite.svg" className="logo" alt="Vite logo" />

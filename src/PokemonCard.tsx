@@ -28,7 +28,7 @@ function PokemonCard(props: Pokemon) {
   },[pokemonId]) 
 
   return <div className="card" key={pokemonId}>
-    <Link to={`/pokemons/${pokemonId}`}>
+    <Link to={`/servc_assignment/pokemons/${pokemonId}`}>
       <img src={imageUrl}/>
       <h2 className="h2-title-case"><b>{props.name} </b></h2>
       with id: {pokemonId}

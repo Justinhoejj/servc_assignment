@@ -14,16 +14,16 @@ import AllPokemons from './AllPokemons';
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/servc_assignment",
     element: <App />,
     errorElement: <ErrorPage/>,
   },
   {
-    path: "/pokemons",
+    path: "servc_assignment/pokemons",
     element: <AllPokemons/>
   },
   {
-    path: "/pokemons/:id",
+    path: "servc_assignment/pokemons/:id",
     element: <ViewPokemon/>
   },
 ]);
