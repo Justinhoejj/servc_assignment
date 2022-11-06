@@ -31,6 +31,8 @@ Documentation for the API:
 * https://pokeapi.co/docs/v2#pokemon - to get a single
 
 ## Commands
+Install necessary dependencies - `npm install`.
+
 Start development server - `npm run dev`.
 
 Build project - `npm run build`.
